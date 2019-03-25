@@ -1,0 +1,12 @@
+{
+  "name": "react-test",
+  "version": "0.0.1",
+  "description": "react ui lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "shenwl",
+  "license": "MIT"
+}
