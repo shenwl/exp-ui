@@ -9,7 +9,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   output: {
-    path: path.resolve(__dirname, '../dist/lib'),
+    path: path.resolve(__dirname, '../dist'),
     libraryTarget: 'umd',
   },
   module: {
