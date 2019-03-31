@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`测试Icon组件 UI测试 1`] = `
+<svg
+  className="exp__icon"
+>
+  <use
+    xlinkHref="#wechat"
+  />
+</svg>
+`;
