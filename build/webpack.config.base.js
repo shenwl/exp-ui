@@ -22,7 +22,26 @@ module.exports = {
       {
         test: /\.svg$/,
         loader: 'svg-sprite-loader',
-      }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.s([ac])ss/, 
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              // modules: true,
+            }
+          },
+          'sass-loader',
+          'postcss-loader'
+        ],
+      },
     ]
   },
   devServer: {
