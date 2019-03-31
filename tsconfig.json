@@ -32,5 +32,9 @@
     "jest",
     "src/setupTests.ts",
     "*.js"
+  ],
+  "include": [
+    "types/**/*",
+    "lib/**/*", "test/icon.test.js", "test/button.test.js",
   ]
 }
