@@ -8,7 +8,11 @@ const handleClick: React.MouseEventHandler = (e) => {
 
 ReactDOM.render((
   <div>
-    <Icon name="wechat" onClick={handleClick} />
+    <Icon name="wechat" 
+      onClick={handleClick} 
+      onMouseEnter={() => {console.log('enter')}} 
+      onMouseLeave={() => {console.log('leave')}} 
+    />
   </div>
 ), document.getElementById('root'));
 
