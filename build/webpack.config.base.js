@@ -19,7 +19,7 @@ module.exports = {
         loader: 'awesome-typescript-loader',
       },
       {
-        test: /icons.+\.svg$/,
+        test: /\.svg$/,
         loader: 'svg-sprite-loader',
       }
     ]
