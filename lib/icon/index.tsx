@@ -11,7 +11,8 @@ const Icon: React.FunctionComponent<IconProps> = props => {
   return (
     <svg 
       className={`exp__icon${ className ? (' ' + className) : ''}`} 
-      {...restProps}>
+      {...restProps}
+    >
       <use xlinkHref={`#${props.name}`} />
     </svg>
   );
