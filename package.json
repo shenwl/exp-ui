@@ -5,7 +5,7 @@
   "types": "dist/lib/index",
   "main": "dist/lib/index",
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand --env=jsdom",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.config.prod.js"
   },
@@ -29,6 +29,7 @@
     "enzyme-adapter-react-16": "^1.11.2",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.5.0",
+    "jsdom": "^14.0.0",
     "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
     "react-test-renderer": "^16.8.6",
