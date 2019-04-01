@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`测试Icon组件 UI测试 1`] = `
+exports[`Icon render successfully 1`] = `
 <svg
   className="exp__icon"
 >
