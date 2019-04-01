@@ -3,8 +3,8 @@
 module.exports = {
   verbose: true,
   clearMocks: false,
-  collectCoverage: false,
-  reporters: ["default"],
+  collectCoverage: true,
+  reporters: ["default", "jest-junit"],
   // globals: {},
   moduleDirectories: [
     "node_modules"

@@ -6,4 +6,5 @@ node_modules
 .idea
 # __snapshots__
 package-lock.json
+coverage
 
