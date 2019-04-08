@@ -51,10 +51,10 @@ workflows:
     jobs:
       - prepare
       - build:
-        requiresL
+        requires:
           - test
-      -test:
-        require:
+      - test:
+        requires:
           - prepare
 
       
