@@ -50,11 +50,11 @@ workflows:
   build_and_test:
     jobs:
       - prepare
-      - build:
-        requires:
-          - test
       - test:
         requires:
           - prepare
+      - build:
+        requires:
+          - test
 
       
