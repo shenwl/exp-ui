@@ -1,10 +1,12 @@
 {
   "name": "exp-ui-test001",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "react ui lib",
   "types": "dist/lib/index",
   "main": "dist/lib/index",
-  "files": ["/dist/**/*"],
+  "files": [
+    "/dist/**/*"
+  ],
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.config.prod.js",
