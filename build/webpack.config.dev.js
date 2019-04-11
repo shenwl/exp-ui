@@ -8,7 +8,7 @@ const { resolve } = path;
 module.exports = Object.assign({}, baseConfig, {
   mode: 'development',
   entry: {
-    example: './example.tsx',
+    example: resolve(__dirname, '../example/index.tsx'),
   },
   plugins: [
     new HtmlWebpackPlugin({
