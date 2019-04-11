@@ -7,9 +7,12 @@ const { resolve } = path;
 
 module.exports = Object.assign({}, baseConfig, {
   mode: 'development',
+  entry: {
+    example: './example.tsx',
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve(__dirname, '../index.html'),
+      template: resolve(__dirname, '../example.html'),
     }),
     new webpack.HotModuleReplacementPlugin()
   ],
