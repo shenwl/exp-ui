@@ -1,0 +1,14 @@
+[class^=exp__] {
+  box-sizing: border-box;
+  font-size: 14px;
+
+  &::after  {
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  &::before  {
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+}
+
