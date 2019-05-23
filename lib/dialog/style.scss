@@ -8,23 +8,22 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10009;
 }
 
 .exp__dialog_header {
   padding: $base-padding;
   border-bottom: 1px solid $base-border;
   position: relative;
+}
 
-  .exp__dialog_close {
-    position: absolute;
-    top: 0;
-    right: $base-padding;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.exp__dialog_close {
+  position: absolute;
+  top: 0;
+  right: $base-padding;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .exp__dialog_content {
