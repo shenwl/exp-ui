@@ -1,24 +1,24 @@
-import React, {Fragment, ReactChildren, ReactElement} from "react";
+import React, { Fragment, ReactElement } from "react";
+import ReactDOM from 'react-dom';
 import Icon from '../icon';
 import './style.scss';
-import {scopedClassMaker} from '../helpers/classes';
+import { scopedClassMaker } from '../helpers/classes';
 
 const sc = scopedClassMaker('exp__dialog')
 
 interface Props {
-  visible: Boolean;
+  visible: boolean;
   onClose: React.MouseEventHandler;
-  maskClosable?: Boolean;
-  onOk?: Function;
-  onCancel?: Function;
-  onConfirm?: Function;
-  closable?: Boolean;
-  mask?: Boolean;
-  children?: ReactElement | Element | String;
-  footer?: ReactElement | Element | String;
+  zIndex?: number;
+  maskClosable?: boolean;
+  mask?: boolean;
+  children?: ReactElement | Element | string;
+  footer?: ReactElement | Element | string;
 }
 
 const Dialog: React.FunctionComponent<Props> = (props) => {
+
+  const zIndexStyle = {zIndex: props.zIndex || 1};
 
   const handleClose: React.MouseEventHandler = (e) => {
     props.onClose(e);
@@ -26,38 +26,64 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
   const handleClickMask: React.MouseEventHandler = (e) => {
     props.maskClosable && props.onClose(e);
   }
-  return (
-    props.visible ? (
-      <Fragment>
-        <div className={sc('mask')} onClick={handleClickMask}></div>
+  const dialog = props.visible ? (
+    <Fragment>
+      <div className={sc('mask')} onClick={handleClickMask} style={zIndexStyle}></div>
 
-        <div className={sc()}>
-          <header className={sc('header')}>
-            <span>提示</span>
-            <div className={sc('close')} onClick={handleClose}>
-              <Icon name="close" />
-            </div>
-          </header>
+      <div className={sc()} style={zIndexStyle}>
+        <header className={sc('header')}>
+          <span>提示</span>
+          <div className={sc('close')} onClick={handleClose}>
+            <Icon name="close" />
+          </div>
+        </header>
 
-          <main className={sc('content')}>
-            { props.children }
-          </main>
+        <main className={sc('content')}>
+          { props.children }
+        </main>
 
-          <footer className={sc('footer')}>
-            { props.footer }
-          </footer>
-        </div>
-      </Fragment>
-    ): null
-  );
+        <footer className={sc('footer')}>
+          { props.footer }
+        </footer>
+      </div>
+    </Fragment>
+  ): null;
+
+  return ReactDOM.createPortal(dialog, document.body)
 };
 
 Dialog.defaultProps = {
-  closable: true,
   mask: true,
-  maskClosable: false,
   children: '',
   onClose: () => {},
 };
 
 export default Dialog;
+
+interface AlertParam {
+  content: string;
+  title?: string;
+}
+
+export const alert: (AlertParam: AlertParam) => void = ({content, title}) => {
+  const div = document.createElement('div');
+  document.body.append(div);
+
+  const dialog = (
+    <Dialog
+      visible={true}
+      onClose={() => {
+        ReactDOM.render(React.cloneElement(dialog, { visible: false }), div);
+        ReactDOM.unmountComponentAtNode(div);
+        div.remove();
+      }}
+      maskClosable={true}
+      footer={(
+        <div>关闭</div>
+      )}
+    >
+      { content }
+    </Dialog>
+  );
+  ReactDOM.render(dialog, div);
+}
