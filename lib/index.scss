@@ -1,14 +1,15 @@
+@import "./styles/index";
+
 [class^=exp__] {
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: $base-font;
 
   &::after  {
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: $base-font;
   }
   &::before  {
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: $base-font;
   }
 }
-
