@@ -3,13 +3,11 @@
 [class^=exp__] {
   box-sizing: border-box;
   font-size: $base-font;
+  color: $base-font-color;
 
-  &::after  {
+  &::after, &::before  {
     box-sizing: border-box;
     font-size: $base-font;
-  }
-  &::before  {
-    box-sizing: border-box;
-    font-size: $base-font;
+    color: $base-font-color;
   }
 }
