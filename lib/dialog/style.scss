@@ -1,0 +1,35 @@
+@import "../styles/index.scss";
+
+.exp__dialog {
+  width: 500px;
+  height: 600px;
+  background: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10009;
+}
+
+.exp__dialog_header {
+  padding: 20px;
+  border-bottom: 1px solid $base-border;
+}
+
+.exp__dialog_content {
+  padding: 20px;
+}
+
+.exp__dialog_footer {
+  padding: 20px;
+}
+
+.exp__dialog_mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: fade_out(black, 0.6);
+  z-index: 10008;
+}

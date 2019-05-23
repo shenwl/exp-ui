@@ -1,5 +1,5 @@
 import Icon from "./icon";
-import 'index.scss';
+import './index.scss';
 
 export {
   Icon,
