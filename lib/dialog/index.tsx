@@ -69,17 +69,19 @@ export const alert: (AlertParam: AlertParam) => void = ({content, title}) => {
   const div = document.createElement('div');
   document.body.append(div);
 
+  const handleClose = (): void => {
+    ReactDOM.render(React.cloneElement(dialog, { visible: false }), div);
+    ReactDOM.unmountComponentAtNode(div);
+    div.remove();
+  }
+
   const dialog = (
     <Dialog
       visible={true}
-      onClose={() => {
-        ReactDOM.render(React.cloneElement(dialog, { visible: false }), div);
-        ReactDOM.unmountComponentAtNode(div);
-        div.remove();
-      }}
+      onClose={handleClose}
       maskClosable={true}
       footer={(
-        <div>关闭</div>
+        <div onClick={handleClose}>关闭</div>
       )}
     >
       { content }
