@@ -1,7 +1,8 @@
 import React, { Fragment, ReactElement } from "react";
 import ReactDOM from 'react-dom';
 import Icon from '../icon';
-import Button from '../button';
+import alert from './alert';
+import confirm from './confirm';
 import './style.scss';
 import { scopedClassMaker } from '../helpers/classes';
 
@@ -9,6 +10,7 @@ const sc = scopedClassMaker('exp__dialog')
 
 interface Props {
   visible: boolean;
+  title?: string;
   onClose: React.MouseEventHandler;
   zIndex?: number;
   maskClosable?: boolean;
@@ -33,7 +35,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
 
       <div className={sc()} style={zIndexStyle}>
         <header className={sc('header')}>
-          <span>提示</span>
+          <span>{props.title}</span>
           <div className={sc('close')} onClick={handleClose}>
             <Icon name="close" />
           </div>
@@ -56,52 +58,13 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
 Dialog.defaultProps = {
   mask: true,
   children: '',
+  title: '提示',
   onClose: () => {},
 };
 
 export default Dialog;
 
-interface AlertParam {
-  content: string;
-  title?: string;
-}
-
-export const alert: (AlertParam: AlertParam) => void = ({content, title}) => {
-  return new Promise((resolve, reject) => {
-    const div = document.createElement('div');
-    document.body.append(div);
-
-    const closeDialog = (): void => {
-      ReactDOM.render(React.cloneElement(dialog, { visible: false }), div);
-      ReactDOM.unmountComponentAtNode(div);
-      div.remove();
-    }
-  
-    const handleClose = (): void => {
-      closeDialog();
-      reject();
-    }
-
-    const handleConfirm = (): void => {
-      closeDialog();
-      resolve();
-    }
-  
-    const dialog = (
-      <Dialog
-        visible={true}
-        onClose={handleClose}
-        maskClosable={true}
-        footer={(
-          <React.Fragment>
-            <Button onClick={handleClose}>关闭</Button>
-            <Button onClick={handleConfirm} type="primary">提交</Button>
-          </React.Fragment> 
-        )}
-      >
-        { content }
-      </Dialog>
-    );
-    ReactDOM.render(dialog, div);
-  })
-}
+export {
+  alert,
+  confirm,
+};

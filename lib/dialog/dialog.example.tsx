@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Dialog, { alert } from './index';
+import Dialog, { alert, confirm } from './index';
 
 const DialogExample: React.FunctionComponent = () => {
   const [show, setShow] = useState(false);
@@ -36,7 +36,8 @@ const DialogExample: React.FunctionComponent = () => {
       </Dialog>
       <button onClick={() => { setShow(!show) }}>click</button>
       <button onClick={() => { setShow2(!show2) }}>click2</button>
-      <button onClick={() => { alert({ content: 'alert' }) }}>alert</button>
+      <button onClick={() => { alert({ content: 'alert', title: 'alert' }) }}>alert</button>
+      <button onClick={() => { confirm({ content: 'alert', title: 'confirm' }) }}>confirm</button>
     </div>
   )
 };
