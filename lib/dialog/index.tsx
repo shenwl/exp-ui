@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Icon from '../icon';
 import alert from './alert';
 import confirm from './confirm';
+import modal from './modal';
 import './style.scss';
 import { scopedClassMaker } from '../helpers/classes';
 
@@ -58,7 +59,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
 Dialog.defaultProps = {
   mask: true,
   children: '',
-  title: '提示',
+  title: '',
   onClose: () => {},
 };
 
@@ -67,4 +68,5 @@ export default Dialog;
 export {
   alert,
   confirm,
+  modal,
 };
