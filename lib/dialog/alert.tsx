@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment, ReactElement, ReactFragment } from "react";
 import ReactDOM from 'react-dom';
 import Dialog from './index';
 import Button from '../button';
 
 interface AlertParam {
-  content: string;
+  content: ReactElement | ReactFragment;
   title?: string;
 }
 
@@ -36,7 +36,9 @@ const alert: (AlertParam: AlertParam) => void = ({content, title}) => {
           </Fragment> 
         )}
       >
-        { content }
+        <Fragment>
+          { content }
+        </Fragment>
       </Dialog>
     );
     ReactDOM.render(dialog, div);

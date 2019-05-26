@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment, ReactFragment, ReactElement } from "react";
 import ReactDOM from 'react-dom';
 import Dialog from './index';
 import Button from '../button';
 
 interface ConfirmParam {
-  content: string;
+  content: ReactElement | ReactFragment;
   title?: string;
 }
 
@@ -42,7 +42,9 @@ const confirm: (ConfirmParam: ConfirmParam) => void = ({content, title}) => {
           </Fragment> 
         )}
       >
-        { content }
+        <Fragment>
+          { content }
+        </Fragment>
       </Dialog>
     );
     ReactDOM.render(dialog, div);
@@ -50,3 +52,4 @@ const confirm: (ConfirmParam: ConfirmParam) => void = ({content, title}) => {
 }
 
 export default confirm;
+ 
