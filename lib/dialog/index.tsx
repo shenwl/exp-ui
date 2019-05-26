@@ -1,6 +1,7 @@
 import React, { Fragment, ReactElement } from "react";
 import ReactDOM from 'react-dom';
 import Icon from '../icon';
+import Button from '../button';
 import './style.scss';
 import { scopedClassMaker } from '../helpers/classes';
 
@@ -66,26 +67,41 @@ interface AlertParam {
 }
 
 export const alert: (AlertParam: AlertParam) => void = ({content, title}) => {
-  const div = document.createElement('div');
-  document.body.append(div);
+  return new Promise((resolve, reject) => {
+    const div = document.createElement('div');
+    document.body.append(div);
 
-  const handleClose = (): void => {
-    ReactDOM.render(React.cloneElement(dialog, { visible: false }), div);
-    ReactDOM.unmountComponentAtNode(div);
-    div.remove();
-  }
+    const closeDialog = (): void => {
+      ReactDOM.render(React.cloneElement(dialog, { visible: false }), div);
+      ReactDOM.unmountComponentAtNode(div);
+      div.remove();
+    }
+  
+    const handleClose = (): void => {
+      closeDialog();
+      reject();
+    }
 
-  const dialog = (
-    <Dialog
-      visible={true}
-      onClose={handleClose}
-      maskClosable={true}
-      footer={(
-        <div onClick={handleClose}>关闭</div>
-      )}
-    >
-      { content }
-    </Dialog>
-  );
-  ReactDOM.render(dialog, div);
+    const handleConfirm = (): void => {
+      closeDialog();
+      resolve();
+    }
+  
+    const dialog = (
+      <Dialog
+        visible={true}
+        onClose={handleClose}
+        maskClosable={true}
+        footer={(
+          <React.Fragment>
+            <Button onClick={handleClose}>关闭</Button>
+            <Button onClick={handleConfirm} type="primary">提交</Button>
+          </React.Fragment> 
+        )}
+      >
+        { content }
+      </Dialog>
+    );
+    ReactDOM.render(dialog, div);
+  })
 }
