@@ -9,40 +9,33 @@ interface AlertParam {
 }
 
 const alert: (AlertParam: AlertParam) => void = ({content, title}) => {
-  return new Promise((resolve, reject) => {
-    const div = document.createElement('div');
-    document.body.append(div);
+  const div = document.createElement('div');
+  document.body.append(div);
 
-    const closeDialog = (): void => {
-      ReactDOM.render(React.cloneElement(dialog, { visible: false }), div);
-      ReactDOM.unmountComponentAtNode(div);
-      div.remove();
-    }
-  
-    const handleClose = (): void => {
-      closeDialog();
-      reject();
-    }
-  
-    const dialog = (
-      <Dialog
-        visible={true}
-        onClose={handleClose}
-        maskClosable={true}
-        title={title}
-        footer={(
-          <Fragment>
-            <Button onClick={handleClose} type="primary">确认</Button>
-          </Fragment> 
-        )}
-      >
+  const closeDialog = (): void => {
+    ReactDOM.render(React.cloneElement(dialog, { visible: false }), div);
+    ReactDOM.unmountComponentAtNode(div);
+    div.remove();
+  }
+
+  const dialog = (
+    <Dialog
+      visible={true}
+      onClose={closeDialog}
+      maskClosable={true}
+      title={title}
+      footer={(
         <Fragment>
-          { content }
-        </Fragment>
-      </Dialog>
-    );
-    ReactDOM.render(dialog, div);
-  })
+          <Button onClick={closeDialog} type="primary">确认</Button>
+        </Fragment> 
+      )}
+    >
+      <Fragment>
+        { content }
+      </Fragment>
+    </Dialog>
+  );
+  ReactDOM.render(dialog, div);
 }
 
 export default alert;
