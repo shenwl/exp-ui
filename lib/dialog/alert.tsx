@@ -1,6 +1,6 @@
 import React, { Fragment, ReactElement, ReactFragment } from "react";
 import ReactDOM from 'react-dom';
-import Dialog from './index';
+import Dialog from './dialog';
 import Button from '../button';
 
 interface AlertParam {
