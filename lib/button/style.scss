@@ -5,6 +5,8 @@
   transition: all 250ms;
   border-radius: $small-radius;
   padding: 5px 15px;
+  margin-right: 8px;
+  margin-bottom: 12px;
 
   &:hover, &:focus {
     border-color: $main-color;
