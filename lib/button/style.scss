@@ -1,0 +1,13 @@
+@import "../styles/index.scss";
+
+.exp__button {
+  border: 1px solid $base-border;
+
+  &:hover, &:focus {
+    border-color: $main-color;
+    color: $main-color;
+  }
+  &:focus {
+    outline: none;
+  }
+}
