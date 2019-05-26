@@ -2,6 +2,9 @@
 
 .exp__button {
   border: 1px solid $base-border;
+  transition: all 250ms;
+  border-radius: $small-radius;
+  padding: 5px 15px;
 
   &:hover, &:focus {
     border-color: $main-color;
@@ -10,4 +13,29 @@
   &:focus {
     outline: none;
   }
+}
+
+.exp__button_plain {
+  background: $base-color;
+}
+
+.exp__button_primary {
+  color: $main-color;
+  border-color: $main-color;
+}
+.exp__button_warning {
+  color: $warning-color;
+  border-color: $warning-color;
+}
+.exp__button_success {
+  color: $success-color;
+  border-color: $success-color;
+}
+.exp__button_danger {
+  color: $danger-color;
+  border-color: $danger-color;
+}
+.exp__button_info {
+  color: $info-color;
+  border-color: $info-color;
 }

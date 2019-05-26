@@ -1,26 +1,33 @@
 import React, { ButtonHTMLAttributes } from "react";
 import './style.scss';
 import classNames from "../helpers/classnames";
-import { scopedClassMaker } from '../helpers/classes';
 
-const sc = scopedClassMaker('exp__button')
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: React.MouseEventHandler;
-  type?: string;
+  type?: 'primary' | 'warning' | 'info' | 'danger' | 'normal';
+  size?: 'mini' | 'large' | 'small';
+  className?: string;
+  plain?: boolean;
 }
 
 const Button: React.FunctionComponent<Props> = (props) => {
-  const { className, children, ...rest } = props;
+  const { className, children, type, ...rest } = props;
+
   return (
-    <button className={classNames(sc(), className)} {...rest}>
+    <button 
+      className={classNames('exp__button', `exp__button_${type}`, className)}
+       {...rest}
+      >
       {children}
     </button>
   )
 };
 
 Button.defaultProps = {
-
+  type: 'normal',
+  onClick: () => {},
+  size: 'small',
 };
 
 export default Button;
