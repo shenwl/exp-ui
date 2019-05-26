@@ -24,11 +24,7 @@ const alert: (AlertParam: AlertParam) => void = ({content, title}) => {
       onClose={closeDialog}
       maskClosable={true}
       title={title}
-      footer={(
-        <Fragment>
-          <Button onClick={closeDialog} type="primary">确认</Button>
-        </Fragment> 
-      )}
+      footer={(<Button onClick={closeDialog} type="primary">确认</Button>)}
     >
       <Fragment>
         { content }
