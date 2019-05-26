@@ -2,12 +2,12 @@
 
 [class^=exp__] {
   box-sizing: border-box;
-  font-size: $base-font;
-  color: $base-font-color;
+  font-size: $normal-font-size;
+  color: $normal-font-color;
 
   &::after, &::before  {
     box-sizing: border-box;
-    font-size: $base-font;
-    color: $base-font-color;
+    font-size: $normal-font-size;
+    color: $normal-font-color;
   }
 }
