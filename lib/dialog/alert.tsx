@@ -1,6 +1,5 @@
-import React, { Fragment, ReactElement, ReactFragment } from "react";
-import ReactDOM from 'react-dom';
-import Dialog from './dialog';
+import React, { ReactElement, ReactFragment } from "react";
+import modal from './modal';
 import Button from '../button';
 
 interface AlertParam {
@@ -8,30 +7,14 @@ interface AlertParam {
   title?: string;
 }
 
-const alert: (AlertParam: AlertParam) => void = ({content, title}) => {
-  const div = document.createElement('div');
-  document.body.append(div);
-
-  const closeDialog = (): void => {
-    ReactDOM.render(React.cloneElement(dialog, { visible: false }), div);
-    ReactDOM.unmountComponentAtNode(div);
-    div.remove();
+const alert: (AlertParam: AlertParam) => void = (props) => {
+  const onClose = () => {
+    alertDialog.close();
   }
-
-  const dialog = (
-    <Dialog
-      visible={true}
-      onClose={closeDialog}
-      maskClosable={true}
-      title={title}
-      footer={(<Button onClick={closeDialog} desc="primary">确认</Button>)}
-    >
-      <Fragment>
-        { content }
-      </Fragment>
-    </Dialog>
-  );
-  ReactDOM.render(dialog, div);
+  const alertDialog = modal({
+    ...props,
+    footer: <Button onClick={onClose} desc="primary">确认</Button>,
+  })
 }
 
 export default alert;
