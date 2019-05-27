@@ -6,9 +6,17 @@ import Dialog from './dialog';
 interface ModalParam {
   content: ReactElement | ReactFragment;
   title?: string;
+  afterClose?: Function;
+  [props: string]: any;
 }
 
-const modal: (ModalParam: ModalParam) => object = ({content, title}) => {
+interface ModalResult {
+  close: Function;
+}
+
+const modal: (ModalParam: ModalParam) => ModalResult = (props) => {
+  const {content, title, afterClose, ...rest} = props;
+
   const div = document.createElement('div');
   document.body.append(div);
 
@@ -18,12 +26,18 @@ const modal: (ModalParam: ModalParam) => object = ({content, title}) => {
     div.remove();
   }
 
+  const close = (): void => {
+    closeDialog();
+    afterClose && afterClose();
+  }
+
   const dialog = (
     <Dialog
       visible={true}
       onClose={closeDialog}
       maskClosable={true}
       title={title}
+      {...rest}
     >
       <Fragment>
         { content }
@@ -33,7 +47,7 @@ const modal: (ModalParam: ModalParam) => object = ({content, title}) => {
   ReactDOM.render(dialog, div);
 
   return {
-    close: closeDialog,
+    close,
   }
 }
 
