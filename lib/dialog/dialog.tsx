@@ -13,8 +13,8 @@ interface Props {
   zIndex?: number;
   maskClosable?: boolean;
   mask?: boolean;
-  children?: ReactElement | Element | string;
-  footer?: ReactElement | Element | string;
+  children?: ReactElement | Element;
+  footer?: ReactElement | Element;
 }
 
 const Dialog: React.FunctionComponent<Props> = (props) => {
@@ -55,8 +55,9 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
 
 Dialog.defaultProps = {
   mask: true,
-  children: '',
+  children: <span></span>,
   title: '',
+  footer: <span></span>,
   onClose: () => {},
 };
 
