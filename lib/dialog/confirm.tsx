@@ -38,7 +38,7 @@ const confirm: (ConfirmParam: ConfirmParam) => void = ({content, title}) => {
         footer={(
           <Fragment>
             <Button onClick={handleClose}>取消</Button>
-            <Button onClick={handleConfirm} type="primary">确认</Button>
+            <Button onClick={handleConfirm} desc="primary">确认</Button>
           </Fragment> 
         )}
       >

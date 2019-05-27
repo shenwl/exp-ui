@@ -5,7 +5,7 @@ import classNames from "../helpers/classnames";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: React.MouseEventHandler;
-  type?: 'primary' | 'warning' | 'info' | 'danger' | 'normal' | 'disabled';
+  desc?: 'primary' | 'warning' | 'info' | 'danger' | 'normal' | 'disabled';
   size?: 'mini' | 'large' | 'small';
   className?: string;
   plain?: boolean;
@@ -13,11 +13,11 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: React.FunctionComponent<Props> = (props) => {
-  const { className, children, type, loading, ...rest } = props;
+  const { className, children, desc, loading, ...rest } = props;
 
   return (
     <button 
-      className={classNames('exp__button', `exp__button_${type}`, className)}
+      className={classNames('exp__button', `exp__button_${desc}`, className)}
       {...rest}
     >
       {children}
@@ -26,7 +26,7 @@ const Button: React.FunctionComponent<Props> = (props) => {
 };
 
 Button.defaultProps = {
-  type: 'normal',
+  desc: 'normal',
   onClick: () => {},
   size: 'small',
 };
