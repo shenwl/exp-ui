@@ -1,10 +1,10 @@
 import React from "react";
 import "./style.scss";
 
-const Layout = () => {
+const Content = () => {
   return (
     <div></div>
   );
 };
 
-export default Layout;
+export default Content;
