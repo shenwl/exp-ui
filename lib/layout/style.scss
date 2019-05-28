@@ -5,6 +5,12 @@
     flex-grow: 1;
     flex-direction: row;
   }
+  &.sider-layout {
+    flex-direction: row;
+    .exp__layout {
+      flex-direction: column;
+    }
+  }
 }
 
 .exp__layout_content {

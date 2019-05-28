@@ -1,7 +1,5 @@
 import React from "react";
 import { Layout, Header, Footer, Content, Sider } from './index';
-import Layout from './layout';
-import Sider from './sider';
 
 export default  () => {
   return (
