@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import { classNames, scopedClassMaker } from "../helpers/classes";
 import Sider from './sider';
 import "./style.scss";
@@ -12,15 +12,11 @@ interface Props extends React.HtmlHTMLAttributes<HTMLElement> {
 const Layout: React.FunctionComponent<Props> = (props) => {
   const { className, children, ...restProps } = props;
 
-  let hasSider = false;
-  
-  if((children as Array<ReactElement>).length) {
-    (children as Array<ReactElement>).forEach(node => {
-      if(node.type === Sider) {
-        hasSider = true;
-      }
-    })
-  } 
+  const childrenAsArray = children as Array<ReactElement>;
+
+  const hasSider = childrenAsArray.length &&
+    childrenAsArray.reduce((pre, cur) => (pre || (cur.type === Sider)), false);
+
 
   return (
     <div className={classNames(sc(), className, sc(hasSider ? 'sider-layout' : ''))} {...restProps}>
