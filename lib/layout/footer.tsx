@@ -1,12 +1,17 @@
 import React from "react";
-import { scopedClassMaker } from '../helpers/classes';
+import { classNames, scopedClassMaker } from "../helpers/classes";
 import "./style.scss";
 
 const sc = scopedClassMaker('exp__layout');
 
-const Footer = () => {
+interface Props extends React.HtmlHTMLAttributes<HTMLElement> {}
+
+const Footer: React.FunctionComponent<Props> = (props) => {
+  const { className, ...restProps } = props;
   return (
-    <div className={sc('footer')}>footer</div>
+    <div className={classNames(sc('footer'), className)} {...restProps}>
+      {props.children}
+    </div>
   );
 };
 

@@ -1,6 +1,5 @@
 import React from "react";
-import { scopedClassMaker } from '../helpers/classes';
-import { classNames } from "../helpers/classes";
+import { classNames, scopedClassMaker } from "../helpers/classes";
 import "./style.scss";
 
 const sc = scopedClassMaker('exp__layout');

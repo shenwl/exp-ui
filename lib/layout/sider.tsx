@@ -1,13 +1,18 @@
 import React from "react";
-import { scopedClassMaker } from '../helpers/classes';
+import { classNames, scopedClassMaker } from "../helpers/classes";
 import "./style.scss";
 
 const sc = scopedClassMaker('exp__layout');
 
-const Side = () => {
+interface Props extends React.HtmlHTMLAttributes<HTMLElement> {}
+
+const Sider: React.FunctionComponent<Props> = (props) => {
+  const { className, ...restProps } = props;
   return (
-    <div className={sc('side')}>side</div>
+    <div className={classNames(sc('sider'), className)} {...restProps}>
+      {props.children}
+    </div>
   );
 };
 
-export default Side;
+export default Sider;
