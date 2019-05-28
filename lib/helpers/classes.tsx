@@ -4,3 +4,6 @@ export const scopedClassMaker = (prefix: string) => {
   }
 };
 
+export const classNames = (...names: (string | undefined)[]) => {
+  return names.filter(Boolean).join(' ');
+}

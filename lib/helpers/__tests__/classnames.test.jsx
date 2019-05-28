@@ -1,4 +1,4 @@
-import classNames from '../classnames';
+import { classNames } from "../helpers/classes";
 
 describe('测试classNames', () => {
   it('接收1个className', () => {
