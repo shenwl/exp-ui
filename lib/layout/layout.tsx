@@ -23,7 +23,7 @@ const Layout: React.FunctionComponent<Props> = (props) => {
   } 
 
   return (
-    <div className={classNames(sc(), className, hasSider ? 'sider-layout' : '')} {...restProps}>
+    <div className={classNames(sc(), className, sc(hasSider ? 'sider-layout' : ''))} {...restProps}>
       {children}
     </div>
   );
