@@ -4,10 +4,10 @@ import "./style.scss";
 
 const sc = scopedClassMaker('exp__layout');
 
-const Layout = () => {
+const Layout = (props) => {
   return (
     <div className={sc()}>
-
+      {props.children}
     </div>
   );
 };
