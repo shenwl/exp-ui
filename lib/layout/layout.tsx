@@ -18,7 +18,7 @@ const Layout: React.FunctionComponent<Props> = (props) => {
     childrenAsArray.reduce((pre, cur) => (pre || (cur.type === Sider)), false);
 
   return (
-    <div className={classNames(sc(), className, sc(hasSider ? 'sider-layout' : ''))} {...restProps}>
+    <div className={classNames(sc(), sc(hasSider ? 'sider-layout' : ''), className)} {...restProps}>
       {children}
     </div>
   );
