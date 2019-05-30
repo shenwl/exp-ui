@@ -17,7 +17,6 @@ const Layout: React.FunctionComponent<Props> = (props) => {
   const hasSider = childrenAsArray.length &&
     childrenAsArray.reduce((pre, cur) => (pre || (cur.type === Sider)), false);
 
-
   return (
     <div className={classNames(sc(), className, sc(hasSider ? 'sider-layout' : ''))} {...restProps}>
       {children}
