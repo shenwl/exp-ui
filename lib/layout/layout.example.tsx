@@ -41,14 +41,14 @@ export default  () => {
       <Layout style={{
         height: 500,
       }}>
-        <Sider>sider3</Sider>
+        <Sider>sider4</Sider>
         <Layout style={{
           height: 500,
         }}>
-          <Header>header3</Header>
-          <Content>content3</Content>
+          <Header>header4</Header>
+          <Content>content4</Content>
+          <Footer>footer4</Footer>
         </Layout>
-        <Footer>footer3</Footer>
       </Layout>
     </div>
   );
