@@ -24,6 +24,10 @@ module.exports = {
         loader: 'svg-sprite-loader',
       },
       {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        use: ['file-loader'],
+      },
+      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
