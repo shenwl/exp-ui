@@ -1,0 +1,31 @@
+@import "../lib/styles/index.scss";
+
+@mixin baseLayout {
+  padding: 6px;
+  margin: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ccc;
+}
+
+.header, .footer {
+  @include baseLayout;
+  height: 60px;
+}
+
+.sider {
+  @include baseLayout;
+  width: 30%;
+}
+
+.content {
+  @include baseLayout;
+}
+
+.layout {
+  margin-top: 10px;
+  height: 300px;
+  width: 600px;
+}
+
