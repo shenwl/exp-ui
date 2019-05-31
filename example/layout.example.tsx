@@ -1,9 +1,9 @@
 import React from "react";
-import { Layout, Header, Footer, Content, Sider } from './index';
+import { Layout, Header, Footer, Content, Sider } from '../lib/layout/index';
 
 const baseStyle = {
-  padding: 10,
-  margin: 10,
+  padding: 6,
+  margin: 6,
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -26,20 +26,22 @@ const contentStyle = {
 }
 
 const layoutStyle = {
-  height: 500,
-  padding: 10,
-  border: '1px solid #ccc',
+  marginTop: 10,
+  height: 300,
+  width: 600,
 }
 
 export default  () => {
   return (
     <div>
+      <h3>第一个例子</h3>
       <Layout style={layoutStyle}>
         <Header style={headerStyle}>header</Header>
         <Content style={contentStyle}>content</Content>
         <Footer style={footerStyle}>footer</Footer>
       </Layout>
       
+      <h3>第二个例子</h3>
       <Layout style={layoutStyle}>
         <Header style={headerStyle}>header2</Header>
         <Layout>
@@ -48,7 +50,8 @@ export default  () => {
         </Layout>
         <Footer style={footerStyle}>footer2</Footer>
       </Layout>
-         
+
+      <h3>第三个例子</h3>
       <Layout style={layoutStyle}>
         <Header style={headerStyle}>header3</Header>
         <Layout>
@@ -58,6 +61,7 @@ export default  () => {
         <Footer style={footerStyle}>footer3</Footer>
       </Layout>
 
+      <h3>第四个例子</h3>
       <Layout style={layoutStyle}>
         <Sider style={siderStyle}>sider4</Sider>
         <Layout>

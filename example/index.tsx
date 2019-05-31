@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
-import IconExample from '../lib/icon/icon.example';
-import DialogExample from '../lib/dialog/dialog.example';
-import LayoutExample from '../lib/layout/layout.example';
+import IconExample from './icon.example';
+import DialogExample from './dialog.example';
+import LayoutExample from './layout.example';
 
 ReactDOM.render((
   <Router>

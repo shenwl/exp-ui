@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Dialog, { alert, confirm, modal } from './index';
+import Dialog, { alert, confirm, modal } from '../lib/dialog/index';
 
 const DialogExample: React.FunctionComponent = () => {
   const [show, setShow] = useState(false);
