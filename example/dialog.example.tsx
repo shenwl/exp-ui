@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { alert, confirm, modal } from '../lib/dialog/index';
 
 const DialogExample: React.FunctionComponent = () => {
