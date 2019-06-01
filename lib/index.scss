@@ -3,11 +3,14 @@
 [class^=exp__] {
   box-sizing: border-box;
   font-size: $normal-font-size;
-  color: $normal-font-color;
 
   &::after, &::before  {
     box-sizing: border-box;
     font-size: $normal-font-size;
     color: $normal-font-color;
   }
+}
+
+html {
+  color: $normal-font-color;
 }
