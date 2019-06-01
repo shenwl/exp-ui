@@ -54,7 +54,11 @@ $padding-column: 8px;
         > li {
           padding: $padding-column $padding-row;
           a {
+            color: $second-font-color;
             &:hover, &:active {
+              color: $main-color;
+            }
+            &.active {
               color: $main-color;
             }
           }
