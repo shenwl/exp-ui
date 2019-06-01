@@ -1,13 +1,13 @@
 import React from 'react';
 import IconExample from './icon.example';
+import CodeDemo from '../codeDemo'
 
-const iconExample = require('!!raw-loader!./icon.example.tsx');
+const code = require('!!raw-loader!./icon.example.tsx');
 
 export default () => {
   return (
-    <React.Fragment>
+    <CodeDemo code={code.default}>
       <IconExample />
-      <pre>{ iconExample.default }</pre>
-    </React.Fragment>
+    </CodeDemo>
   )
 }

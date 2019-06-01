@@ -1,13 +1,13 @@
 import React from 'react';
 import LayoutExample from './layout.example';
+import CodeDemo from '../codeDemo'
 
-const layoutExample = require('!!raw-loader!./layout.example.tsx');
+const code = require('!!raw-loader!./layout.example.tsx');
 
 export default () => {
   return (
-    <React.Fragment>
+    <CodeDemo code={code.default}>
       <LayoutExample />
-      <pre>{ layoutExample.default }</pre>
-    </React.Fragment>
+    </CodeDemo>
   )
 }

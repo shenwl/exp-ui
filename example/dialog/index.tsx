@@ -1,13 +1,13 @@
 import React from 'react';
 import DialogExample from './dialog.example';
+import CodeDemo from '../codeDemo'
 
-const dialogExample = require('!!raw-loader!./dialog.example.tsx');
+const code = require('!!raw-loader!./dialog.example.tsx');
 
 export default () => {
   return (
-    <React.Fragment>
+    <CodeDemo code={code.default}>
       <DialogExample />
-      <pre>{ dialogExample.default }</pre>
-    </React.Fragment>
+    </CodeDemo>
   )
 }
