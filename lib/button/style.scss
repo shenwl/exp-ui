@@ -9,8 +9,8 @@
   margin-bottom: 12px;
 
   &:hover, &:focus {
-    border-color: $main-color;
-    color: $main-color;
+    border-color: lighten($color: $main-color, $amount: 10%);
+    color: lighten($color: $main-color, $amount: 10%);
   }
   &:focus {
     outline: none;
