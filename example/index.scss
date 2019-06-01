@@ -27,6 +27,7 @@ $padding-column: 8px;
 // page
 .page-wrapper {
   width: 1024px;
+  min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
   position: relative;
