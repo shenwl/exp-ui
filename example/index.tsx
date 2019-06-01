@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, NavLink } from 'react-router-dom'
 
-import IconExample from './icon.example';
-import DialogExample from './dialog.example';
-import LayoutExample from './layout.example';
+import IconExample from './icon';
+import DialogExample from './dialog';
+import LayoutExample from './layout';
 
 import { Layout, Header, Footer, Content, Sider } from '../lib/layout/index';
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Header, Footer, Content, Sider } from '../lib/layout/index';
+import { Layout, Header, Footer, Content, Sider } from '../../lib/layout/index';
 import './layout.example.scss';
 
 export default  () => {

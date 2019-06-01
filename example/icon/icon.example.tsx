@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '../lib/index';
+import { Icon } from '../../lib/index';
 import './icon.example.scss';
 
 const IconExample: React.FunctionComponent = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { alert, confirm, modal, Button } from '../lib/index';
+import { alert, confirm, modal, Button } from '../../lib/index';
 
 const DialogExample: React.FunctionComponent = () => {
   return (
