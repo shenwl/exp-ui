@@ -10,6 +10,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.config.prod.js",
+    "doc": "cross-env NODE_ENV=production webpack --config build/webpack.config.example.js",
     "test": "cross-env NODE_ENV=testjest JEST_JUNIT_OUTPUT=./test_results/jest/results.xml jest --config=jest.config.js --env=jsdom"
   },
   "keywords": [],
