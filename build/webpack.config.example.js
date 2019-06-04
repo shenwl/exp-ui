@@ -5,8 +5,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = Object.assign({}, baseConfig, {
   mode: 'production',
   entry: {
-    ...baseConfig.entry,
     example: resolve(__dirname, '../example/index.tsx')
+  },
+  output: {
+    path: resolve(__dirname, '../doc'),
   },
   plugins: [
     new HtmlWebpackPlugin({
