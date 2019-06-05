@@ -5,6 +5,10 @@ A React UI library
 
 [![npm version](https://badge.fury.io/js/exp-ui-test001.svg)](https://badge.fury.io/js/exp-ui-test001)
 
+## 文档地址
+
+[中文](https://shenwl.github.io/exp-ui/example.html)
+
 ## 开始
 
 - 使用npm安装
