@@ -13,7 +13,7 @@ module.exports = Object.assign({}, baseConfig, {
   plugins: [
     new HtmlWebpackPlugin({
       template: resolve(__dirname, '../example.html'),
-      filename: 'index.html',
+      filename: 'example.html',
     }),
   ]
 })
