@@ -2,6 +2,7 @@ import Icon from "./icon";
 import Button from "./button";
 import Dialog, { alert, confirm, modal } from "./dialog";
 import { Layout, Header, Content, Footer, Sider } from './layout';
+import Form from "./form";
 
 import './index.scss';
 
@@ -17,6 +18,7 @@ export {
   alert, 
   confirm, 
   modal,
+  Form,
 }
 
 
