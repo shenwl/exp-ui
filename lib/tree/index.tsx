@@ -5,20 +5,19 @@ import { scopedClassMaker, classNames } from '../helpers/classes';
 
 const bem = scopedClassMaker('exp__tree');
 
-interface IconProps extends React.SVGAttributes<SVGElement> {
-  name: string;
+interface TreeProps {
+  className?: string;
 }
 
-const Icon: React.FunctionComponent<IconProps> = ({
+const Tree: React.FC<TreeProps> = ({
   className,
-  name,
   ...restProps
 }) => {
   return (
-    <svg className={classNames(bem(), className)} {...restProps}>
-      <use xlinkHref={`#${name}`} />
-    </svg>
+    <div className={classNames(bem(), className)} {...restProps}>
+      Tree
+    </div>
   );
 };
 
-export default Icon;
+export default Tree;

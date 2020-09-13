@@ -6,6 +6,7 @@ import IconExample from './icon';
 import DialogExample from './dialog';
 import LayoutExample from './layout';
 import FormExample from './form';
+import TreeExample from './tree';
 
 import { Layout, Header, Footer, Content, Sider } from '../lib/layout/index';
 
@@ -40,6 +41,9 @@ ReactDOM.render((
             <li>
               <NavLink to="/form">Form</NavLink>
             </li>
+            <li>
+              <NavLink to="/tree">Tree</NavLink>
+            </li>
           </ul>
         </Sider>
 
@@ -48,6 +52,7 @@ ReactDOM.render((
           <Route path="/dialog" component={DialogExample}></Route>
           <Route path="/layout" component={LayoutExample}></Route>
           <Route path="/form" component={FormExample}></Route>
+          <Route path="/tree" component={TreeExample}></Route>
         </Content>
       </Layout>
       <Footer>
